@@ -14,19 +14,28 @@ document.addEventListener("DOMContentLoaded", function() {
             const title = document.createElement('h2');
             title.textContent = pattern.name;
 
+            const descTitle = document.createElement('h3');
+            descTitle.textContent = 'Descripción';
             const description = document.createElement('p');
             description.textContent = pattern.description;
 
+            const implTitle = document.createElement('h3');
+            implTitle.textContent = 'Implementación';
             const implementation = document.createElement('pre');
             implementation.textContent = pattern.implementation;
 
+            const umlTitle = document.createElement('h3');
+            umlTitle.textContent = 'Diagrama UML';
             const uml = document.createElement('img');
             uml.src = pattern.uml;
             uml.alt = pattern.name + " UML Diagram";
 
             patternElement.appendChild(title);
+            patternElement.appendChild(descTitle);
             patternElement.appendChild(description);
+            patternElement.appendChild(implTitle);
             patternElement.appendChild(implementation);
+            patternElement.appendChild(umlTitle);
             patternElement.appendChild(uml);
 
             container.appendChild(patternElement);
@@ -60,5 +69,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     displayPatterns(filteredPatterns);
                 });
             });
-        });
+        })
+        .catch(error => console.error('Error fetching patterns:', error));
 });

@@ -63,7 +63,7 @@ main {
 }
 
 .pattern {
-    background: #1e1e1e;
+    background: #1b5e20;
     margin: 1rem 0;
     padding: 1.5rem;
     border-radius: 5px;
@@ -76,13 +76,19 @@ main {
     font-weight: 700;
 }
 
+.pattern h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #b9f6ca;
+}
+
 .pattern p {
     font-size: 1.1rem;
     line-height: 1.6;
 }
 
 .pattern pre {
-    background: #333;
+    background: #2e7d32;
     padding: 1rem;
     border-radius: 5px;
     overflow-x: auto;
