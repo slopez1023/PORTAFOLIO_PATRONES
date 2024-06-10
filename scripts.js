@@ -13,28 +13,37 @@ document.addEventListener("DOMContentLoaded", function() {
 
             const title = document.createElement('h2');
             title.textContent = pattern.name;
+            title.classList.add('pattern-title');
 
-            const descTitle = document.createElement('h3');
-            descTitle.textContent = 'Descripción';
             const description = document.createElement('p');
-            description.textContent = pattern.description;
+            description.textContent = 'Descripción';
+            description.classList.add('pattern-subtitle');
 
-            const implTitle = document.createElement('h3');
-            implTitle.textContent = 'Implementación';
+            const descriptionText = document.createElement('p');
+            descriptionText.textContent = pattern.description;
+            descriptionText.classList.add('pattern-description');
+
             const implementation = document.createElement('pre');
             implementation.textContent = pattern.implementation;
+            implementation.classList.add('pattern-implementation');
 
-            const umlTitle = document.createElement('h3');
-            umlTitle.textContent = 'Diagrama UML';
             const uml = document.createElement('img');
             uml.src = pattern.uml;
             uml.alt = pattern.name + " UML Diagram";
 
             patternElement.appendChild(title);
-            patternElement.appendChild(descTitle);
             patternElement.appendChild(description);
-            patternElement.appendChild(implTitle);
+            patternElement.appendChild(descriptionText);
+
+            const implementationTitle = document.createElement('p');
+            implementationTitle.textContent = 'Implementación';
+            implementationTitle.classList.add('pattern-subtitle');
+            patternElement.appendChild(implementationTitle);
             patternElement.appendChild(implementation);
+
+            const umlTitle = document.createElement('p');
+            umlTitle.textContent = 'Diagrama UML';
+            umlTitle.classList.add('pattern-subtitle');
             patternElement.appendChild(umlTitle);
             patternElement.appendChild(uml);
 
@@ -69,6 +78,5 @@ document.addEventListener("DOMContentLoaded", function() {
                     displayPatterns(filteredPatterns);
                 });
             });
-        })
-        .catch(error => console.error('Error fetching patterns:', error));
+        });
 });
